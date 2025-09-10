@@ -16,3 +16,9 @@ function MyComponent(){
         <h1>Value occured is : {propsCame} </h1>
     )
 }
+
+
+// kousalya-dev  kousalyasathya2001@gmail.com
+
+// git config --global user.name "kousalya-dev"
+// git config --global user.email "kousalyasathya2001@gmail.com"
