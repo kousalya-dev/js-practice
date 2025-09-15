@@ -1,0 +1,6 @@
+| Operation | Command                       |
+| --------- | ----------------------------- |
+| Create    | `insertOne()`, `insertMany()` |
+| Read      | `find()`, `findOne()`         |
+| Update    | `updateOne()`, `updateMany()` |
+| Delete    | `deleteOne()`, `deleteMany()` |

@@ -9,3 +9,11 @@ function ComponentG(){
     <div>Count is : {calculation}</div>
     )
 }
+
+
+
+// const memorize = useMemo(()=> HeavyLogic(value),[value])
+
+const componentMemorize = React.memo(function reRender({value}){
+    return <h1> This component given : {value} </h1>
+});
