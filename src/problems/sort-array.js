@@ -15,3 +15,24 @@ function findSorted (input){
 
 const result = findSorted(array);
 console.log('result',result)
+
+
+
+//find duplicates 
+
+let str = 'kousalya'
+let nonDuplicates = [];
+let duplicates = [];
+
+let arrayVal = str.split('')
+
+for(let char = 0; char <= arrayVal.length; char ++){
+    if(nonDuplicates.includes(char)){
+        duplicates.push(char)
+    }else{
+        nonDuplicates.push(char)
+    }
+}
+console.log(duplicates)
+
+
