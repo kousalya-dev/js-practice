@@ -5,3 +5,9 @@ for(let i = arrayValue.length-1; i >= 0; i--){
     result += arrayValue[i]
 }
 console.log(arrayValue,'result',result)
+
+
+
+for(let i = arrayValue.length -1; i>=0; i--){
+    result += arrayValue[i]
+}

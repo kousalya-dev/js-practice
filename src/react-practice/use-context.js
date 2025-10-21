@@ -18,6 +18,18 @@ function MyComponent(){
 }
 
 
+
+
+import {useContext,createContext} from 'react'
+
+const ContextCreator = createContext();
+
+export default function ComponentC (){
+    <ContextCreator.Provider value={"Kousalya"}>
+        <MyComponent />
+    </ContextCreator.Provider>
+}
+
 // kousalya-dev  kousalyasathya2001@gmail.com
 
 // git config --global user.name "kousalya-dev"

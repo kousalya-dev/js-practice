@@ -41,3 +41,14 @@ myPromise2.then((data=>{
         console.log("data",data)
     }
 })).catch((error)=> console.log("error : ",error))
+
+
+const checkPromise = new Promise((resolve,reject)=>{
+    if(55 > 45){
+        resolve('Im greater')
+    }else{
+        reject('Im not greater')
+    }
+})
+
+checkPromise.then((data)=> console.log(data)).catch((err)=>  console.log(err))

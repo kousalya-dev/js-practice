@@ -15,3 +15,4 @@ function findSorted (input){
 
 const result = findSorted(array);
 console.log('result',result)
+

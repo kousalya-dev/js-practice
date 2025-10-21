@@ -19,3 +19,29 @@ export default function ComponentE(){
         </div>
     )
 }
+
+
+
+
+import {useReducer} from 'react';
+
+
+function myReducer(state,action){
+    switch(action.type){
+        case 'Increment' : return {count : state.count+1}
+        case 'Decrement' : return {count : state.count-1}
+        default : return state
+    }
+}
+export default function ComponentF(){
+    const [state,dispatch] = useReducer(myReducer,{count :0})
+
+    return (
+        <div>
+            <h1>Current Value is : {state.count}</h1>
+            <button onClick={()=>{dispatch({type: 'Increment'})}}>Increment</button>
+            <button onClick={()=>{dispatch({type: 'Decrement'})}}>Decrement</button>
+            <button>Decrement</button>
+        </div>
+    )
+}
