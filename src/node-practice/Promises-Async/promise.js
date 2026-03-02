@@ -14,6 +14,10 @@ rejected → operation failed
 */
 
 
+const promise = new Promise((request,response)=>{
+    
+})
+
 // const myPromise = new Promise((resolve,reject)=>{
 //     if(55 > 15){
 //         resolve("Im Greater")
@@ -41,3 +45,17 @@ myPromise2.then((data=>{
         console.log("data",data)
     }
 })).catch((error)=> console.log("error : ",error))
+
+
+
+const myPromise3 = new Promise((resolve,reject)=>{
+    if(25 > 45){
+        resolve('25 is greater than 45');
+    }else{
+        reject('25 is smaller than 45')
+    }
+})
+
+myPromise3.then((data)=>{
+    console.log(data)
+}).catch((error) => console.log(error))

@@ -1,0 +1,138 @@
+What is a SQL Join?
+
+👉 A JOIN in SQL is used to combine data from two or more tables based on a related column between them.
+
+Think of it like matching two Excel sheets where both have a common column (like user_id or student_id).
+
+🧩 Example Tables
+🧾 Table 1 — Students
+student_id	name
+1	Kousalya
+2	Arjun
+3	Priya
+🧾 Table 2 — Marks
+student_id	subject	marks
+1	Math	90
+2	Math	80
+4	Math	95
+⚙️ How JOIN works
+
+We use:
+
+SELECT ...
+FROM Students
+JOIN Marks
+ON Students.student_id = Marks.student_id;
+
+
+This line says:
+
+“Combine data from Students and Marks where their student_id matches.”
+
+🔹 1️⃣ INNER JOIN
+
+👉 Returns only the records that have matching values in both tables.
+
+SELECT Students.name, Marks.subject, Marks.marks
+FROM Students
+INNER JOIN Marks
+ON Students.student_id = Marks.student_id;
+
+✅ Result:
+name	subject	marks
+Kousalya	Math	90
+Arjun	Math	80
+
+🧠 Explanation:
+
+student_id = 1 → match found ✅
+
+student_id = 2 → match found ✅
+
+student_id = 3 → no match ❌
+
+student_id = 4 → in Marks only ❌
+
+🔹 2️⃣ LEFT JOIN (LEFT OUTER JOIN)
+
+👉 Returns all rows from the left table (Students),
+and matching rows from the right table (Marks).
+If no match, fills with NULL.
+
+SELECT Students.name, Marks.subject, Marks.marks
+FROM Students
+LEFT JOIN Marks
+ON Students.student_id = Marks.student_id;
+
+✅ Result:
+name	subject	marks
+Kousalya	Math	90
+Arjun	Math	80
+Priya	NULL	NULL
+
+🧠 Explanation:
+All students are shown.
+If a student has no marks, values are NULL.
+
+🔹 3️⃣ RIGHT JOIN (RIGHT OUTER JOIN)
+
+👉 Opposite of LEFT JOIN.
+Returns all rows from the right table (Marks),
+and matching rows from the left (Students).
+
+SELECT Students.name, Marks.subject, Marks.marks
+FROM Students
+RIGHT JOIN Marks
+ON Students.student_id = Marks.student_id;
+
+✅ Result:
+name	subject	marks
+Kousalya	Math	90
+Arjun	Math	80
+NULL	Math	95
+
+🧠 Explanation:
+All Marks are shown, even if student not found (ID 4).
+
+🔹 4️⃣ FULL JOIN (FULL OUTER JOIN)
+
+👉 Combines LEFT + RIGHT JOIN
+Shows all records from both tables —
+when there is no match, fills with NULL.
+
+SELECT Students.name, Marks.subject, Marks.marks
+FROM Students
+FULL JOIN Marks
+ON Students.student_id = Marks.student_id;
+
+✅ Result:
+name	subject	marks
+Kousalya	Math	90
+Arjun	Math	80
+Priya	NULL	NULL
+NULL	Math	95
+🔹 5️⃣ CROSS JOIN
+
+👉 Returns every possible combination (cartesian product).
+
+SELECT Students.name, Marks.subject
+FROM Students
+CROSS JOIN Marks;
+
+
+If Students has 3 rows and Marks has 3 rows → 3 × 3 = 9 total rows.
+
+🧠 Used rarely, mostly for testing or special cases.
+
+🧩 Quick Summary Table
+Type	Description	Returns
+INNER JOIN	Only matching records	Common rows
+LEFT JOIN	All from left + matches	All left rows
+RIGHT JOIN	All from right + matches	All right rows
+FULL JOIN	All rows from both	All (with NULLs)
+CROSS JOIN	Every combination	Cartesian result
+🎯 Interview-Level Explanation
+
+“A SQL JOIN combines data from multiple tables based on a common field.
+The most common types are INNER, LEFT, RIGHT, and FULL joins.
+INNER returns only matched rows, LEFT returns all from left + matches, RIGHT returns all from right + matches, and FULL returns all records from both tables with NULLs for missing data.”

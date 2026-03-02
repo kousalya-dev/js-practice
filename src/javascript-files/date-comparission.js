@@ -23,3 +23,9 @@ const call2 = checkGreaterDate(d1,d2)
 const call3 = dateParse(d1);
 
 console.log("call1",call1,"call2",call2,"call3",call3)
+
+const date1 = new Date('2025-11-20');
+const date2 = new Date('2025-10-12');
+
+if(date1.getTime() === date2.getTime()) return 'Dates are equal'
+else return 'Not equal'

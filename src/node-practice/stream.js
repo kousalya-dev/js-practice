@@ -1,14 +1,10 @@
 const fs = require('fs');
 
-const fileRead = fs.createReadStream('myFile.json');
-const fileWrite = fs.createWriteStream('newFile.json');
+const readStream = fs.createReadStream('toReadFile.json');
+const writeStream = fs.createWriteStream('toWriteStream.json');
 
-fileRead.pipe(fileWrite);
+readStream.pipe(writeStream);
 
-fileWrite.on('finish',()=>{
-    console.log('Files writed successfully!');
-})
-
-
-
-
+readStream.on('data', (chunk)=> console.log('File data : ',chunk))
+readStream.on('end',()=> console.log('File came to END'))
+readStream.on('')
