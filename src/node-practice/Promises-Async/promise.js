@@ -59,3 +59,12 @@ const myPromise3 = new Promise((resolve,reject)=>{
 myPromise3.then((data)=>{
     console.log(data)
 }).catch((error) => console.log(error))
+const checkPromise = new Promise((resolve,reject)=>{
+    if(55 > 45){
+        resolve('Im greater')
+    }else{
+        reject('Im not greater')
+    }
+})
+
+checkPromise.then((data)=> console.log(data)).catch((err)=>  console.log(err))

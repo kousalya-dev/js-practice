@@ -29,3 +29,41 @@ export default function ComponentD(){
         </div>
     )
 }
+
+
+
+
+
+function MyComponentA(){
+
+    const [name, setName] = useState('');
+    const referenceCreated = useRef();
+
+    function sample(){
+        referenceCreated.current.focus();
+    }
+
+    return (
+        <input ref = {referenceCreated} onChange={(e)=> setName(e.target.value)} type='text' placeholder='Enter the name'  value={name}/>
+    )
+}
+
+
+
+
+/* ORDER OF EXECUTION LIFECYCLE METHODS
+
+Constructor
+getDerivedStateFromProps
+Render
+componentDidMount
+
+
+getDerivedStateFromProps
+shouldComponentUpdate
+Render
+getSnapshotBeforeUpdate
+componentDidUpdate
+
+
+*/

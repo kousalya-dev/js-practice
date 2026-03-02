@@ -30,11 +30,15 @@ Phase 5 : close phase
 (Microtasks: process.nextTick, Promises → run *between each step*)
 
 
+
+
 Synchronous code first.
 
 Then microtasks (nextTick > Promises).
 
 Then event loop phases: Timers → Pending → Poll → Check → Close.
+
+
 
 
 1. Run synchronous code (main stack)
